@@ -1,5 +1,5 @@
 import Cart from "./pages/Cart";
-import Jpt from "./jpt";
+// import Jpt from "./jpt";
 import LandingPage from "./pages/LandingPage";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path="/jpt" element={<Jpt/>}></Route>
+        {/* <Route path="/jpt" element={<Jpt/>}></Route> */}
         <Route path="/check" element={
             <div>
               <br />
