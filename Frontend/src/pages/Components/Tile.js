@@ -1,5 +1,14 @@
+
 const Tile= (props) => {
+
     const food=props.food;
+
+    const addToCart = ()=>{
+        var cart= JSON.parse(localStorage.getItem('cart'));
+        cart.push(food);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log(cart);
+    }
 
     return(
         <div className="product">
@@ -11,7 +20,8 @@ const Tile= (props) => {
                 {food.name}
             </div>
             <div className="tags"> 
-                 {food.tag.map((ta)=>
+                 {
+                 food.tag.map((ta)=>
                     <span>{ta}</span>
                 )}
                 {/* <span>tag1</span>
@@ -23,7 +33,7 @@ const Tile= (props) => {
                     {/* 5$ */}
                 </span>
                 <span>
-                    <img src="/images/buy.png" alt="buy"></img>
+                    <img className="buy-icon" src="/images/buywhite.png" alt="buy" onClick={addToCart}></img>
                 </span>
             </div>
         </div>

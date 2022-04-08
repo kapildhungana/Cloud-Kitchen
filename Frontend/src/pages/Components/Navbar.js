@@ -4,6 +4,7 @@ const Navbar = ()=> {
     console.log("clicked");
     localStorage.removeItem('token');
     localStorage.removeItem('usertype');
+    localStorage.removeItem('cart');
   }
   return (
     <div className="navbar">

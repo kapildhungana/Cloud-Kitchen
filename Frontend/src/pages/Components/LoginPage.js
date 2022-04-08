@@ -27,6 +27,7 @@ const LoginPage = (props) => {
         // alert(res.data.token);
         localStorage.setItem("token",res.data);
         localStorage.setItem("usertype",user);
+        localStorage.setItem("cart", JSON.stringify([]));
         window.location.href=`/home/${user}`;
       }
     })
@@ -104,3 +105,26 @@ const LoginPage = (props) => {
 };
 
 export default LoginPage;
+
+
+// {
+//   id: 1,
+//   tag : ["veg","all time snack"],
+//   name : "Pasta Carbonara",
+//   price : 25, 
+//   imageurl : "random1",           
+// },
+// {
+//   id:2,
+//   tag : ["veg","kids special"],
+//   name : "Mushroom Risotto",
+//   price : 25, 
+//   imageurl : "random2",
+// },
+// {
+//   id:3,
+//   tag : ["veg","most loved"],
+//   name : "Margherita Pizza",
+//   price : 25, 
+//   imageurl : "random3",
+// },
