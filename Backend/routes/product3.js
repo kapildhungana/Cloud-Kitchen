@@ -28,6 +28,48 @@ router.get('/save', (req, res) => {
                 price : 25, 
                 imageurl : "random3",
             },
+            {
+                tag : ["veg","kids special"],
+                name : "Mushroom Risotto",
+                price : 25, 
+                imageurl : "random2",
+            },
+            {
+                tag : ["veg","kids special"],
+                name : "Mushroom Risotto",
+                price : 25, 
+                imageurl : "random2",
+            },
+            {
+                tag : ["veg","all time snack"],
+                name : "Pasta Carbonara",
+                price : 25, 
+                imageurl : "random1",           
+            },
+            {
+                tag : ["veg","kids special"],
+                name : "Mushroom Risotto",
+                price : 25, 
+                imageurl : "random2",
+            },
+            {
+                tag : ["veg","most loved"],
+                name : "Margherita Pizza",
+                price : 25, 
+                imageurl : "random3",
+            },
+            {
+                tag : ["veg","kids special"],
+                name : "Mushroom Risotto",
+                price : 25, 
+                imageurl : "random2",
+            },
+            {
+                tag : ["veg","kids special"],
+                name : "Mushroom Risotto",
+                price : 25, 
+                imageurl : "random2",
+            },
             
         ],
     });

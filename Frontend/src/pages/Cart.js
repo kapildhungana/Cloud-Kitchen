@@ -1,5 +1,6 @@
 import CartComponent from './Components/CartComponent';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 const Cart = () => {
     if(!localStorage.token || localStorage.usertype!=="customer"){
@@ -12,6 +13,8 @@ const Cart = () => {
             <div className="cart">
             <CartComponent/>
             </div>
+            {/* <Footer/> */}
+
         </div>
         
      );

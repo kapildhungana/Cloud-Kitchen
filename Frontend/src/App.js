@@ -1,4 +1,5 @@
 import Cart from "./pages/Cart";
+// import Jpt from "./jpt";
 import LandingPage from "./pages/LandingPage";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -23,6 +24,8 @@ function App() {
 
   const [foodDetails, setFoodDetails] = useState([]);
 
+  // const [cart, setCart] = useState([]);
+
   const getFoodData = async() => {
     const products3 = await axios.get(get_food3_url);
     setFoodDetails(products3.data);
@@ -39,6 +42,7 @@ function App() {
     <>
     <Router>
       <Routes>
+        {/* <Route path="/jpt" element={<Jpt/>}></Route> */}
         <Route path="/check" element={
             <div>
               <br />
@@ -54,11 +58,11 @@ function App() {
         }></Route>
         <Route path="/" element={<LandingPage/>}/> 
         <Route path="/register" element={<RegisterPage/>}/> 
-        <Route path="/logincustomer" element={<LoginPage user={"customer"}/>}/> 
+        <Route path="/logincustomer" element={<LoginPage user={"customer"} />}/> 
         <Route path="/loginkitchenemployee" element={<LoginPage user={"kitchenemployee"}/>}/> 
         <Route path="/logindeliverypersonnel" element={<LoginPage user={"deliverypersonnel"}/>}/> 
         <Route path="/home" element={<HomePage fooddetails={foodDetails}/>}/> 
-        <Route path="/home/customer" element={<HomePage fooddetails={foodDetails}/>}/> 
+        <Route path="/home/customer" element={<HomePage fooddetails={foodDetails} />}/> 
         <Route path="/cart" element={<Cart/>}/> 
         <Route path="/home/kitchenemployee" element={<Orders/>}/> 
         <Route path="/home/deliverypersonnel" element={<Delivery/>}/> 
