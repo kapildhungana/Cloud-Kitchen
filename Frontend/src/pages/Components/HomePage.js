@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Board from "./Board";
 import Offer from "./Offer";
 import Footer from "./Footer";
+import {NotificationContainer, NotificationManager} from "react-notifications";
 
 const HomePage =(props)=>{
     if(!localStorage.token || localStorage.usertype!=="customer"){
@@ -14,6 +15,7 @@ const HomePage =(props)=>{
         <div>
             <Navbar/>
             <Offer/>
+            <NotificationContainer/>
             {fooddetails.map((fooddetail)=> (
                 <Board fooddetail={fooddetail} key={fooddetail._id}/>
             )
