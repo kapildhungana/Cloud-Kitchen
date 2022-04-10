@@ -1,5 +1,6 @@
 import Cart from "./pages/Cart";
 // import Jpt from "./jpt";
+import Profile from "./pages/Profile";
 import LandingPage from "./pages/LandingPage";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -87,6 +88,7 @@ function App() {
         <Route path="/cart" element={<Cart/>}/> 
         <Route path="/home/kitchenemployee" element={<Orders order = {kporder} />}/> 
         <Route path="/home/deliverypersonnel" element={<Delivery order = {fdorder}/>}/> 
+        <Route path="/profile" element={<Profile/>}/>
 
 
 
