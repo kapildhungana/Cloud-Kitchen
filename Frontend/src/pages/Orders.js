@@ -1,10 +1,16 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-const Orders=()=>{
+import axios from "axios";
+import Board1 from "./Components/Board1";
+
+const Orders=  (props) =>{
+    console.log(props);
+
     if(!localStorage.token || localStorage.usertype!=="kitchenemployee"){
         window.location.href = `/register`;
         return;
-        }
+    }
+    
     
     return(
         <div >
@@ -17,31 +23,14 @@ const Orders=()=>{
             
 
             <div className="cartbox">
-            <div className="classtop">
-                <span className="toggle active">Delivery</span>
-                <span className="toggle">Cooking</span>
-            </div>
-                <div className="cart">
-                        <div className="cartImagebox">
-                            <img src="/images/mushroompizza.png" className="cartImage"></img>
-                        </div>
-                        <div className="cartInfo">
-                            <div className="itemName">Mushroom Pizza</div>
-                            <div className="itemName">Quantity</div>
-                        </div>
-                        <div className="take">Take</div>
-                    </div>
+                <div className="classtop">
+                    <span className="toggle active">Delivery</span>
+                    <span className="toggle">Cooking</span>
+                </div>
 
-                    <div className="cart">
-                        <div className="cartImagebox">
-                            <img src="/images/mushroompizza.png" className="cartImage"></img>
-                        </div>
-                        <div className="cartInfo">
-                            <div className="itemName">Mushroom Pizza</div>
-                            <div className="itemName">Quantity</div>
-                        </div>
-                        <div className="take">Take</div>
-                    </div>
+                {props.order.map((item)=> (
+                    <Board1 item = {item} />
+                ))};
                     
             </div>
             <Footer/>
