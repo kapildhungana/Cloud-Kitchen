@@ -1,7 +1,36 @@
 import CartItem from "./CartItem";
 import Bill from "./Bill";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const CartComponent = () => {
+
+    const orderRequested = () => {
+        const order_url = "http://localhost:5000/order/save";
+        const orderDetail = {
+            customer : "roshan@bhatt.com",
+            kitchenEmployee : "",
+            deliveryPersonnel : "",
+            orderDetails : [
+                {
+                    name : "Panner Pakoda",
+                    quantity : 4,
+                },
+                {
+                    name : "Chowmein",
+                    quantity : 4,
+                },
+                {
+                    name : "Palak Paneer",
+                    quantity : 4,
+                }
+            ],
+            status : 0, 
+        }
+
+        axios.post(order_url,orderDetail);
+    }
+
     // const cart = [{
     //     id: 1,
     //     tag : ["veg","all time snack"],
@@ -38,17 +67,14 @@ const CartComponent = () => {
 
                 <div className="cartBill">
                     <div className="Billinner">
-                    {cart.map((c)=>(
-                        <Bill item={c} key={c.id}/>
-                    ))}
-                     <div className=" row">
-                            <div className="Button">Checkout</div>
-                       </div>
+                        {cart.map((c)=>(
+                            <Bill item={c} key={c.id}/>
+                        ))}
+                        <div className=" row">
+                                <div className="Button" onClick={orderRequested}>Checkout</div>
+                        </div>
 
-                    </div>
-                    
-                    
-                   
+                    </div>  
                 </div>
             </div>
         </div>

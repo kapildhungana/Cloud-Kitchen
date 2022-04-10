@@ -7,6 +7,7 @@ const port = 5000;
 const cors = require('cors');
 const productModels = require('./models/product');
 const product3Models = require('./models/product3');
+const orderModel = require('./models/order');
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -16,6 +17,7 @@ app.use(cors());
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const product3Router = require("./routes/product3");
+const orderRouter = require("./routes/order");
 
 const dbURI = 'mongodb+srv://cloud:cloud@cloudkitchen.afn38.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,6 +33,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/products3", product3Router);
+app.use("/order",orderRouter);
 
 app.get("/products", (req, res) => {
     productModels.find({})
@@ -42,6 +45,17 @@ app.get("/products", (req, res) => {
             console.log('error ');
         })
 });
+
+app.get("/orders",(req,res) => {
+    orderModel.find({})
+    .then((data) => {
+        // console.log('Data: ', data);
+        res.send(data)
+    })
+    .catch((error) => {
+        console.log('error ');
+    })
+})
 
 app.get("/products3", (req, res) => {
     product3Models.find({})

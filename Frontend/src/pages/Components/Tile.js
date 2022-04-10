@@ -5,6 +5,7 @@ const Tile = (props) => {
 
     const food = props.food;
 
+<<<<<<< HEAD
     var cart = JSON.parse(localStorage.getItem('cart'));
     var status=false;
 
@@ -31,6 +32,14 @@ const Tile = (props) => {
         }
 
         // console.log(cart);
+=======
+    const addToCart = async()=>{
+        var cart= JSON.parse(localStorage.getItem('cart'));
+        cart.push(food);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log(cart);
+        
+>>>>>>> fa91372a378a0a4c300d8f2b54099a63297460e3
     }
 
     return (

@@ -17,6 +17,7 @@ import RegisterPage from "./pages/Components/RegisterPage";
 function App() {
   const url = "http://localhost:5000/";
   const get_food3_url = "http://localhost:5000/products3";
+  const get_order_url = "http://localhost:5000/orders/";
   
   // const get_food_url = "http://localhost:5000/products";
 
@@ -24,13 +25,33 @@ function App() {
 
   const [foodDetails, setFoodDetails] = useState([]);
 
+  const [kporder ,setkpOrder] = useState([]);
+
+  const [fdorder ,setfdOrder] = useState([]);
+
   // const [cart, setCart] = useState([]);
+  
+  const getOrder = async() => {
+    const orders = await axios.get(get_order_url);
+    const kpOrders = [], fdOrders = [];
+    orders.data.forEach(ord => {
+        if(ord.status === 0){
+          kpOrders.push(ord);
+        }
+        else if(ord.status === 3){
+          fdOrders.push(ord);
+        }
+    });
+    setkpOrder(kpOrders);
+    setfdOrder(fdOrders);
+  }
 
   const getFoodData = async() => {
     const products3 = await axios.get(get_food3_url);
     setFoodDetails(products3.data);
   }
-
+  
+  useEffect(()=> getOrder());
   useEffect(() => getFoodData());
   const getData = async () => {
     const message = await axios.get(url);
@@ -64,8 +85,8 @@ function App() {
         <Route path="/home" element={<HomePage fooddetails={foodDetails}/>}/> 
         <Route path="/home/customer" element={<HomePage fooddetails={foodDetails} />}/> 
         <Route path="/cart" element={<Cart/>}/> 
-        <Route path="/home/kitchenemployee" element={<Orders/>}/> 
-        <Route path="/home/deliverypersonnel" element={<Delivery/>}/> 
+        <Route path="/home/kitchenemployee" element={<Orders order = {kporder} />}/> 
+        <Route path="/home/deliverypersonnel" element={<Delivery order = {fdorder}/>}/> 
 
 
 
