@@ -9,7 +9,9 @@ const RegisterPage = () => {
     fullname: event.target.fullname.value, 
     phonenumber: event.target.phonenumber.value,
     email: event.target.email.value,
-    password: event.target.password.value
+    password: event.target.password.value,
+    // type: event.target.type.value
+    type: "customer"
   };
 
   if(event.target.password.value!==event.target.confirmpassword.value){
@@ -19,7 +21,7 @@ const RegisterPage = () => {
     axios.post(url,data)
     .then((res)=>{
       alert("Form Submitted");
-      window.location.href="/logincustomer";
+      window.location.href=`/login${data.type}`;
     })
     .catch((err)=>{
       console.log(err);
@@ -40,6 +42,19 @@ const RegisterPage = () => {
               <input type="email" placeholder="Email" name="email"/>
               <input type="password" placeholder="Password" name="password"/>
               <input type="password" placeholder="Confirm Password" name="confirmpassword"/>
+              {/* <span> 
+                <input type="radio" name="type" id="cus" value="customer"/>
+                <label for="cus">Customer</label>
+              </span>
+              <span> 
+              <input type="radio" name="type" id="ord" value="kitchenemployee"/>
+              <label for="ord">kitchenemployee</label>
+              </span>
+              <span> 
+              <input type="radio" name="type" id="dil" value="dilevarypersonnel"/>
+              <label for="ord">dilevarypersonnel</label>
+              </span>
+   */}
               {/* <input type="password" placeholder="Confirm Password" name="confirmpassword"/> */}
               <input type="submit" value="Register" />
             </form>
@@ -52,7 +67,7 @@ const RegisterPage = () => {
           </div>
         </div>
         <div className="loginphoto">
-          <img src="images/registerFood.jpg" alt="LoginBurger" />
+          <img src="/images/registerFood.jpg" alt="LoginBurger" />
         </div>
       </div>
     </div>

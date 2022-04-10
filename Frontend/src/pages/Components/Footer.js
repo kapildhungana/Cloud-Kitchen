@@ -4,18 +4,18 @@ const Footer = () => {
       <div className="footer_content">
         <div className="contact">
           <div className="logo_name">
-            <img src="images/GhostEatsWhite.png" alt="GhostEatsWhite" />
+            <img src="/images/GhostEatsWhite.png" alt="GhostEatsWhite" />
           </div>
           <div className="social_media_links">
             <ul>
               <li>
-                <img src="images/instagram.png" alt="instagram" />
+                <img src="/images/instagram.png" alt="instagram" />
               </li>
               <li>
-                <img src="images/facebook.png" alt="facebook" />
+                <img src="/images/facebook.png" alt="facebook" />
               </li>
               <li>
-                <img src="images/twitter.png" alt="twitter" />
+                <img src="/images/twitter.png" alt="twitter" />
               </li>
             </ul>
           </div>

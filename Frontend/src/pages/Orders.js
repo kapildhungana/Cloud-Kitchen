@@ -1,10 +1,17 @@
-
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 const Orders=()=>{
+    if(!localStorage.token || localStorage.usertype!=="kitchenemployee"){
+        window.location.href = `/register`;
+        return;
+        }
+    
     return(
         <div >
             {/* <div className="inside">
                 center this
             </div> */}
+            <Navbar/>
             <hr className="dividerLine"></hr>
             <div className="cartHeading">Orders</div>
             
@@ -16,7 +23,7 @@ const Orders=()=>{
             </div>
                 <div className="cart">
                         <div className="cartImagebox">
-                            <img src="images/mushroompizza.png" className="cartImage"></img>
+                            <img src="/images/mushroompizza.png" className="cartImage"></img>
                         </div>
                         <div className="cartInfo">
                             <div className="itemName">Mushroom Pizza</div>
@@ -27,7 +34,7 @@ const Orders=()=>{
 
                     <div className="cart">
                         <div className="cartImagebox">
-                            <img src="images/mushroompizza.png" className="cartImage"></img>
+                            <img src="/images/mushroompizza.png" className="cartImage"></img>
                         </div>
                         <div className="cartInfo">
                             <div className="itemName">Mushroom Pizza</div>
@@ -37,6 +44,7 @@ const Orders=()=>{
                     </div>
                     
             </div>
+            <Footer/>
             
         </div>
     )

@@ -1,46 +1,34 @@
 const Offer=()=>{
     return(
     <div className="out">
-         <div className="main">
             
-         <div className="flex">
-         <div className="offer-outer">
-            <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
-                </div>
-            </div>
-            <div className="right">
-                <img src="images/food.jpg"></img>
-            </div>
-        </div>
-         </div>
          
-       <div className="flex">
          <div className="offer-outer">
             <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
+                <div className="left-in">
+                    <div className="bold">Todays Special</div>
+                    <div className="bold">Jhol Mo: Mo:</div>
+                    <div >The goodness of Mo: Mo: with hot soup for this cold day. Its nature’s demand.</div>
+                    <div className="Button3">OrderNow</div>
                 </div>
             </div>
             <div className="right">
-                <img src="images/food.jpg"></img>
+                <img src="/images/food.jpg" alt="offer"></img>
             </div>
         </div>
-         </div> 
-  
-         <div className="flex">
+
+         {/* <div className="flex">
          <div className="offer-outer">
             <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
+                <div className="left-in">
+                    <div className="bold">Todays Special</div>
+                    <div className="bold">Jhol Mo: Mo:</div>
+                    <div >The goodness of Mo: Mo: with hot soup for this cold day. Its nature’s demand.</div>
+                    <div className="Button3">OrderNow</div>
                 </div>
             </div>
             <div className="right">
-                <img src="images/food.jpg"></img>
+                <img src="/images/food.jpg" alt="offer"></img>
             </div>
         </div>
          </div>
@@ -48,48 +36,22 @@ const Offer=()=>{
          <div className="flex">
          <div className="offer-outer">
             <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
+                <div className="left-in">
+                    <div className="bold">Todays Special</div>
+                    <div className="bold">Jhol Mo: Mo:</div>
+                    <div >The goodness of Mo: Mo: with hot soup for this cold day. Its nature’s demand.</div>
+                    <div className="Button3">OrderNow</div>
                 </div>
             </div>
             <div className="right">
-                <img src="images/food.jpg"></img>
+                <img src="/images/food.jpg" alt="offer"></img>
             </div>
         </div>
          </div>
+          */}
+       
           
-          <div className="flex">
-         <div className="offer-outer">
-            <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
-                </div>
-            </div>
-            <div className="right">
-                <img src="images/food.jpg"></img>
-            </div>
-        </div>
-         </div>
-          
-         <div className="flex">
-         <div className="offer-outer">
-            <div className="left">
-                <div>
-                    <div>Order Now!!</div>
-                    <div>50% Discount</div>
-                </div>
-            </div>
-            <div className="right">
-                <img src="images/food.jpg"></img>
-            </div>
-        </div>
-         </div> 
-          
-
-        
-     </div>
+         
     </div>
      
     )

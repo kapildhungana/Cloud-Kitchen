@@ -1,20 +1,35 @@
+/* @import url("/index.css") */
 
+:root{
+    --darkRed: #E63020;
+    --lightRed: #DD3A2B;
+    --white: white;
+    --black: black;
+    --lora: 'Lora', serif;
+    --lobster: 'Lobster', cursive;
+  }
 .board{
     padding: 0px 30px 30px 30px;
-    background-color: gray;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 30px 240px;
+    margin: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 30px;
     /* z-index: -1; */
 }
 
+
 .content{
-    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 30px;
     z-index: inherit;
+    gap:40px;
     
 }
 .board_title{
@@ -27,4 +42,27 @@
     padding: 10px;
     color: black;
     /* background-color: gold; */
+}
+.board_title{
+    cursor: pointer;
+}
+.Button2{
+    display: flex;
+    width: 35%;
+    /* border: 2px solid black; */
+    flex-direction: row;
+    justify-content: space-around; 
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: bold;
+    /* background-color: white; */
+    /* align-items: center; */
+    padding: 10px;
+    background-color: var(--darkRed);
+  }
+
+.Button2:hover{
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(255, 10, 10, 0.2), 0 2px 6px 0 rgba(255, 2, 2, 0.2);
 }

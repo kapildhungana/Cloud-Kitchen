@@ -34,7 +34,7 @@ router.get('/profile', authenticate, (req, res) => {
 router.post('/register', (req, res) => {
     const user1 = new user({
         fullName: req.body.fullname,
-        type: "customer",
+        type: req.body.type,
         email: req.body.email,
         phone: req.body.phonenumber,
         password: req.body.password
@@ -52,9 +52,11 @@ router.post('/register', (req, res) => {
 router.post('/login', async(req, res) => {
     const email = req.body.email;
     const type = req.body.type;
+    console.log(req.body);
     await user.findOne({ email: req.body.email, password: req.body.password, type: req.body.type })
         .then((result) => {
             if (result) {
+                console.log(result);
                 const token = jwt.sign({
                         email,
                         type,
