@@ -3,11 +3,12 @@ const Tile= (props) => {
 
     const food=props.food;
 
-    const addToCart = ()=>{
+    const addToCart = async()=>{
         var cart= JSON.parse(localStorage.getItem('cart'));
         cart.push(food);
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log(cart);
+        
     }
 
     return(
