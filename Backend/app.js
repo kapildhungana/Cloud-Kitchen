@@ -46,7 +46,7 @@ app.get("/products", (req, res) => {
         })
 });
 
-app.get("/orders",(req,res) => {
+app.get("/order",(req,res) => {
     orderModel.find({})
     .then((data) => {
         // console.log('Data: ', data);

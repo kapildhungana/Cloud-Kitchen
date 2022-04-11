@@ -3,6 +3,9 @@
 const Board1 = (props) => {
     const item = props.item;
     // console.log(item);
+    const orderDone = (item) => {
+        
+    }
 
     return (
         <div className="cart">
@@ -13,7 +16,7 @@ const Board1 = (props) => {
                 <div className="itemName">{item.orderDetails[0].name}</div>
                 <div className="itemName">Quantity Take</div>
             </div>
-            <div className="take">Take</div>
+            <div className="take" onClick={orderDone(item)}>Take</div>
         </div>
     )
 }

@@ -7,6 +7,7 @@ const CartComponent = () => {
 
     const orderRequested = () => {
         const order_url = "http://localhost:5000/order/save";
+        console.log(order_url)
         const orderDetail = {
             customer : "roshan@bhatt.com",
             kitchenEmployee : "",

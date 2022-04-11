@@ -18,7 +18,7 @@ import RegisterPage from "./pages/Components/RegisterPage";
 function App() {
   const url = "http://localhost:5000/";
   const get_food3_url = "http://localhost:5000/products3";
-  const get_order_url = "http://localhost:5000/orders/";
+  const get_order_url = "http://localhost:5000/order/";
   
   // const get_food_url = "http://localhost:5000/products";
 
