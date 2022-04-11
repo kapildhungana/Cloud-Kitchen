@@ -5,6 +5,7 @@ import './tile.css';
 import './board.css';
 import './offer.css';
 import './orders.css';
+import './profile.css';
 import App from './App';
 
 ReactDOM.render(
