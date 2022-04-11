@@ -6,9 +6,15 @@ const Board1 = (props) => {
     console.log(item);
 
     const orderDone = async (item) => {
-        const order_url = "http://localhost:5000/order/update";
 
-        await axios.patch(order_url, item);
+        if(item.status === 0){
+            const order_url = "http://localhost:5000/order/update0";
+            await axios.patch(order_url, item);
+        }
+        else if(item.status === 1){
+            const order_url = "http://localhost:5000/order/update1";
+            await axios.patch(order_url, item);
+        }
 
     }
 

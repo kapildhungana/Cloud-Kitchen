@@ -54,7 +54,10 @@ function App() {
         }
     });
     setkpOrder(kpOrders);
+    setcookOrder(cookOrders);
     setfdOrder(fdOrders);
+    setdelivOrder(delivOrders);
+
   }
 
   const getFoodData = async() => {
@@ -98,9 +101,9 @@ function App() {
         <Route path="/cart" element={<Cart/>}/> 
         {/* <Route path="/home/kitchenemployee" element={<Orders order = {kporder} type={"pending"}/>}/>   */}
         <Route path="/home/kitchenemployee/pending" element={<Orders order = {kporder} type={"pending"}/>}/> 
-        <Route path="/home/kitchenemployee/cooking" element={<Orders order = {kporder} type={"cooking"}/>}/> 
+        <Route path="/home/kitchenemployee/cooking" element={<Orders order = {cookorder} type={"cooking"}/>}/> 
         <Route path="/home/deliverypersonnel/pending" element={<Delivery order = {fdorder} type={"pending"}/>}/> 
-        <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {fdorder} type={"delivering"}/>}/> 
+        <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {delivorder} type={"delivering"}/>}/> 
         <Route path="/profile" element={<Profile/>}/>
 
 
