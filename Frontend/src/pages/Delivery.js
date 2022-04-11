@@ -4,11 +4,12 @@ import Board2 from "./Components/Board2";
 import { Link } from "react-router-dom";
 
 const Delivery=(props)=>{
+    console.log(props)
     if(!localStorage.token || localStorage.usertype!=="deliverypersonnel"){
         window.location.href = `/register`;
         return;
-        }
-        const type = props.type;
+    }
+    const type = props.type;
     return(
         <div >
             <Navbar user={"deliverypersonnel"}/>
@@ -41,11 +42,14 @@ const Delivery=(props)=>{
                 })()}
 
             {props.order.map((item) => {
-                <Board2 item = {item} />
-            })}
+                console.log(item);
+                console.log("here");
+                <Board2 item={item} />
+                console.log("here5");
+            })};
                     
             </div>
-            <Footer/>
+            {/* <Footer/> */}
             
         </div>
     )

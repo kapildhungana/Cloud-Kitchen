@@ -30,21 +30,34 @@ function App() {
 
   const [fdorder ,setfdOrder] = useState([]);
 
+  const [cookorder ,setcookOrder] = useState([]);
+
+  const [delivorder ,setdelivOrder] = useState([]);
+
   // const [cart, setCart] = useState([]);
   
   const getOrder = async() => {
     const orders = await axios.get(get_order_url);
-    const kpOrders = [], fdOrders = [];
+    const kpOrders = [], cookOrders = [], fdOrders = [], delivOrders = [] ;
     orders.data.forEach(ord => {
         if(ord.status === 0){
           kpOrders.push(ord);
         }
-        else if(ord.status === 3){
+        else if(ord.status === 1){
+          cookOrders.push(ord);
+        }
+        else if(ord.status === 2){
           fdOrders.push(ord);
+        }
+        else if(ord.status === 3){
+          delivOrders.push(ord);
         }
     });
     setkpOrder(kpOrders);
+    setcookOrder(cookOrders);
     setfdOrder(fdOrders);
+    setdelivOrder(delivOrders);
+
   }
 
   const getFoodData = async() => {
@@ -88,9 +101,9 @@ function App() {
         <Route path="/cart" element={<Cart/>}/> 
         {/* <Route path="/home/kitchenemployee" element={<Orders order = {kporder} type={"pending"}/>}/>   */}
         <Route path="/home/kitchenemployee/pending" element={<Orders order = {kporder} type={"pending"}/>}/> 
-        <Route path="/home/kitchenemployee/cooking" element={<Orders order = {kporder} type={"cooking"}/>}/> 
+        <Route path="/home/kitchenemployee/cooking" element={<Orders order = {cookorder} type={"cooking"}/>}/> 
         <Route path="/home/deliverypersonnel/pending" element={<Delivery order = {fdorder} type={"pending"}/>}/> 
-        <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {fdorder} type={"delivering"}/>}/> 
+        <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {delivorder} type={"delivering"}/>}/> 
         <Route path="/profile" element={<Profile/>}/>
 
 
