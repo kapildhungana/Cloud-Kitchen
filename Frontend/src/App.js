@@ -96,8 +96,11 @@ function App() {
         <Route path="/home" element={<HomePage fooddetails={foodDetails}/>}/> 
         <Route path="/home/customer" element={<HomePage fooddetails={foodDetails} />}/> 
         <Route path="/cart" element={<Cart/>}/> 
-        <Route path="/home/kitchenemployee" element={<Orders order = {kporder} />}/> 
-        <Route path="/home/deliverypersonnel" element={<Delivery order = {fdorder}/>}/> 
+        {/* <Route path="/home/kitchenemployee" element={<Orders order = {kporder} type={"pending"}/>}/>   */}
+        <Route path="/home/kitchenemployee/pending" element={<Orders order = {kporder} type={"pending"}/>}/> 
+        <Route path="/home/kitchenemployee/cooking" element={<Orders order = {kporder} type={"cooking"}/>}/> 
+        <Route path="/home/deliverypersonnel/pending" element={<Delivery order = {fdorder} type={"pending"}/>}/> 
+        <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {fdorder} type={"delivering"}/>}/> 
         <Route path="/profile" element={<Profile/>}/>
 
 

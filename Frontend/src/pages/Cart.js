@@ -10,7 +10,7 @@ const Cart = () => {
     return ( 
         <div>
             <Navbar user={"customer"} page={"cartpage"}/>
-            <div className="cart">
+            <div className="cart1">
             <CartComponent/>
             </div>
             {/* <Footer/> */}
