@@ -16,7 +16,7 @@ router.post('/save', (req, res) => {
     });
     order1.save()
         .then((result) => {
-            res.send(result);
+            // res.send(result);
             console.log("Order saved");
         })
         .catch((error) => {
