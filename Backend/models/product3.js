@@ -10,6 +10,7 @@ const product3Schema = mongoose.Schema({
             tag : Array,
             name : String,
             price : Number,
+            description: String,
             imageurl : String,
         }
     ],

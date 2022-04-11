@@ -11,6 +11,7 @@ const HomePage =(props)=>{
     return;
     }
     const fooddetails=props.fooddetails;
+    // console.log(fooddetails);
     return (
         <div>
             <Navbar user={"customer"} page={"homepage"}/>

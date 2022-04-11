@@ -3,11 +3,6 @@
 
 @import "react-notifications/lib/notifications.css";
 
-*{
-  margin: 0;
-  padding: 0;
-}
-
 :root{
   --darkRed: #E63020;
   --lightRed: #DD3A2B;
@@ -43,6 +38,10 @@
   margin: 0;
   padding: 0;
   font-family: var(--lora);
+}
+
+body{
+  overflow-x: hidden;
 }
 
 input:focus{
