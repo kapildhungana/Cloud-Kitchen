@@ -192,6 +192,7 @@ input:focus{
 
 }
 
+/* .cart, */
 .profileItem,
 .cartItem{
   position: relative;
@@ -231,7 +232,7 @@ input:focus{
 
 .itemName{
   width: 100%;
-  margin-left: 12%;
+  margin-left: 6%;
 }
 
 .trash{
