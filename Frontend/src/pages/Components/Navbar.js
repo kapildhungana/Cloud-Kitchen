@@ -1,25 +1,106 @@
 import { Link } from "react-router-dom";
-const Navbar = ()=> {
-  const logout=()=>{
+const Navbar = (props) => {
+  const logout = () => {
     console.log("clicked");
-    localStorage.removeItem('token');
-    localStorage.removeItem('usertype');
-    localStorage.removeItem('cart');
-  }
+    localStorage.removeItem("token");
+    localStorage.removeItem("usertype");
+    localStorage.removeItem("cart");
+    // window.location.href = "/";
+  };
+
+  const user = props.user;
+  const page = props.page;
+
   return (
     <div className="navbar">
       <div className="logo">
-      <Link to={"/home"}><img src="/images/GhostEats.png" alt="GhostEats" /></Link></div>
-      <div className="nav_list">
-          <ul>
-              {/* <li><img src="/images/search.png" alt="search" /></li> */}
-              <li><Link to={"/profile"}><img src="/images/people.png" alt="people" /></Link></li>
-              <li> <Link to={"/cart"}><img src="/images/buy.png" alt="buy" /></Link></li>
-              <li>
-              <img src="/images/logout.png" alt="logout" onClick={logout}/>
-              </li>
-          </ul>
+        <Link to={"/home"}>
+          <img src="/images/GhostEats.png" alt="GhostEats" />
+        </Link>
       </div>
+
+      {(() => {
+        if (user === "customer") {
+          return (
+            <div className="nav_list">
+              <ul>
+                {(() => {
+                  if (page === "homepage") {
+                    return (
+                      <li>
+                        <Link to={"/home"}>
+                          <img src="/images/home_red.png" alt="home" />
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li>
+                        <Link to={"/home"}>
+                          <img src="/images/home.png" alt="home" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })()}
+
+                {(() => {
+                  if (page === "profilepage") {
+                    return (
+                      <li>
+                        <Link to={"/profile"}>
+                          <img src="/images/people_red.png" alt="people_red" />
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li>
+                        <Link to={"/profile"}>
+                          <img src="/images/people.png" alt="people" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })()}
+
+                {(() => {
+                  if (page === "cartpage") {
+                    return (
+                      <li>
+                        <Link to={"/cart"}>
+                          <img src="/images/buy_red.png" alt="buy_red" />
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li>
+                        <Link to={"/cart"}>
+                          <img src="/images/buy.png" alt="buy" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })()} 
+                <li>
+                  <img src="/images/logout.png" alt="logout" onClick={logout} />
+                </li>
+              </ul>
+            </div>
+          );
+        } else if (user === "kitchenemployee" || user === "deliverypersonnel") {
+          return (
+            <div className="nav_list">
+              <ul>
+                <li>
+                  <img src="/images/logout.png" alt="logout" onClick={logout} />
+                </li>
+              </ul>
+            </div>
+          );
+        }
+      })()}
     </div>
   );
 };

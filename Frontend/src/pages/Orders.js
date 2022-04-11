@@ -17,7 +17,7 @@ const Orders=  (props) =>{
             {/* <div className="inside">
                 center this
             </div> */}
-            <Navbar/>
+            <Navbar user={"kitchenemployee"}/>
             <hr className="dividerLine"></hr>
             <div className="cartHeading">Orders</div>
             

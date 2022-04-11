@@ -13,7 +13,7 @@ const HomePage =(props)=>{
     const fooddetails=props.fooddetails;
     return (
         <div>
-            <Navbar/>
+            <Navbar user={"customer"} page={"homepage"}/>
             <Offer/>
             <NotificationContainer/>
             {fooddetails.map((fooddetail)=> (

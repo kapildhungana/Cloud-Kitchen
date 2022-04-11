@@ -4,7 +4,7 @@ const Bill = (props)=>{
     return(
         <div className="row">
             <div id="data">{item.name}</div>
-            <div id="data">{item.price}</div>
+            <div id="data">$ {item.price}</div>
         </div>
     )
 }
