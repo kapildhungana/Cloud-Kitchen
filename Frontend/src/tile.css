@@ -59,7 +59,7 @@
     font-size: 1.75em;
 }
 .buy-icon{
-    background-color: red;
+    /* background-color: red; */
     height: 35px;
     width: 35px;
     padding: 2px;
@@ -68,9 +68,9 @@
     z-index: 1;
 }
 
-.buy-icon:{
+/* .buy-icon{
     box-shadow: 0 4px 8px 0 rgba(99, 197, 233, 0.2), 0 6px 20px 0 rgba(99, 197, 233, 0.2);
-}
+} */
 img:hover{
     cursor: pointer;
 }

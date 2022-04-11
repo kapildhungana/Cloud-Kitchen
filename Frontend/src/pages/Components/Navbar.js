@@ -13,8 +13,8 @@ const Navbar = ()=> {
       <div className="nav_list">
           <ul>
               {/* <li><img src="/images/search.png" alt="search" /></li> */}
-              <li><img src="/images/people.png" alt="people" /></li>
-              <li> <Link to={"/Cart"}><img src="/images/buy.png" alt="buy" /></Link></li>
+              <li><Link to={"/profile"}><img src="/images/people.png" alt="people" /></Link></li>
+              <li> <Link to={"/cart"}><img src="/images/buy.png" alt="buy" /></Link></li>
               <li>
               <img src="/images/logout.png" alt="logout" onClick={logout}/>
               </li>

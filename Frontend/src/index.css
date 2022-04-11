@@ -82,6 +82,7 @@ input:focus{
   /* align-items: top; */
 }
 
+.profileComponent,
 .cartContainer{
   font-family: var(--lora);
   display: flex;
@@ -92,6 +93,7 @@ input:focus{
   
 }
 
+.profileHeading,
 .cartHeading{
   text-align: center;
   margin: 20px 0;
@@ -99,6 +101,11 @@ input:focus{
   font-weight: bold;
 }
 
+.profileHeading{
+  font-size: 34px;
+}
+
+.profileBody,
 .cartBody{
   /* width: 500px; */
   width: 90%;
@@ -113,6 +120,8 @@ input:focus{
 
 
 }
+
+.profileItems,
 .cartItems{
   width: 45%;
   min-width: 400px;
@@ -131,6 +140,7 @@ input:focus{
   width: 40%;
   background-color: var(--darkRed);
 }
+
 .Billinner{
   /* width: 75%;
   border: 2px solid black; */
@@ -181,7 +191,11 @@ input:focus{
   padding: 10px;
 
 }
+
+.profileItem,
 .cartItem{
+  position: relative;
+
   width: 95%;
   height: 160px;
 
@@ -217,7 +231,18 @@ input:focus{
 
 .itemName{
   width: 100%;
-  margin-left: 5%;
+  margin-left: 12%;
+}
+
+.trash{
+  position: absolute;
+  top: 12px;
+  right: 6px;
+}
+
+.trash img{
+  object-fit: cover;
+  height: 24px;
 }
 
 .itemNumbers{

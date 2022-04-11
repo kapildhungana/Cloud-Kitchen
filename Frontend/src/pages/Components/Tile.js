@@ -22,12 +22,12 @@ const Tile = (props) => {
         if (!ordered) {
             cart.push(food);
             localStorage.setItem('cart', JSON.stringify(cart));
-            NotificationManager.success(`${food.name} is added to cart!!`);
+            NotificationManager.success(`${food.name} is added to the cart!`);
             setOrdered(true);
             status= true;
         }
         else {
-            NotificationManager.info(`${food.name} already there in cart!!`);
+            NotificationManager.info(`${food.name} is already there in the art!`);
         }
 
         // console.log(cart);

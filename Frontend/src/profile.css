@@ -1,14 +1,4 @@
-.form-out{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    /* background-color: darkslategray; */
-
-}
-
-form{
+.addressform{
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -18,7 +8,9 @@ form{
     gap: 25px;
     /* border: 2px solid white ; */
     border-radius: 10px;
-    background-color: darkslategray;
+    box-shadow: 0 2px 4px 0 rgba(72, 189, 59, 0.2), 0 2px 6px 0 rgba(57, 185, 61, 0.2); 
+    /* background-color: darkslategray; */
+    
     color: bisque;
 }
 form input{
@@ -68,7 +60,9 @@ h1{
     /* background-color: white; */
     /* align-items: center; */
     padding: 10px;
-    background-color: rgb(39, 194, 39);
+    /* background-color: rgb(39, 194, 39); */
+    background-color: #E63020;
+    border: none;
   }
 
 .Button4:hover{
@@ -77,13 +71,18 @@ h1{
 }
 
 
-.address{
-    width: 40vw;
+.profileItem{
+    width: 90%;
+    height: 40px;
     padding: 20px;
     border-radius: 12px;
-    background-color: darkslategray;
-    color: white;
-    
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    box-shadow: 0 2px 4px 0 rgba(72, 189, 59, 0.2), 0 2px 6px 0 rgba(57, 185, 61, 0.2); 
 }
 
 /* .addressform{
