@@ -9,7 +9,7 @@ const Cart = () => {
         }
     return ( 
         <div>
-            <Navbar/>
+            <Navbar user={"customer"} page={"cartpage"}/>
             <div className="cart">
             <CartComponent/>
             </div>

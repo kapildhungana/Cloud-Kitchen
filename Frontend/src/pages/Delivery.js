@@ -9,7 +9,7 @@ const Delivery=(props)=>{
         }
     return(
         <div >
-            <Navbar/>
+            <Navbar user={"deliverypersonnel"}/>
             {/* <div className="inside">
                 center this
             </div> */}

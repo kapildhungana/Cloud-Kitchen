@@ -8,7 +8,7 @@ const Profile=()=>{
         //     Hello WOrld!!
         // </div>
         <div>
-            <Navbar/>
+            <Navbar user={"customer"} page={"profilepage"}/>
             <ProfileComponent/>
         </div>
         )
