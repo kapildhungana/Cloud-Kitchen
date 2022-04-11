@@ -27,7 +27,7 @@ const Tile = (props) => {
             status= true;
         }
         else {
-            NotificationManager.info(`${food.name} is already there in the art!`);
+            NotificationManager.info(`${food.name} is already there in the cart!`);
         }
 
         // console.log(cart);
