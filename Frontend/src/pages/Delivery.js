@@ -29,7 +29,7 @@ const Delivery=(props)=>{
                                 <Link to="/home/deliverypersonnel/pending"><span className="toggle active">Pending</span></Link>
                                 <Link to="/home/deliverypersonnel/delivering"><span className="toggle">Delivering</span></Link>
                             </div>
-                        );
+                        )
                     }
                     else if (type === "delivering") {
                         return (
@@ -37,16 +37,15 @@ const Delivery=(props)=>{
                                 <Link to="/home/deliverypersonnel/pending"><span className="toggle">Pending</span></Link>
                                 <Link to="/home/deliverypersonnel/delivering"><span className="toggle active">Delivering</span></Link>
                             </div>
-                        );
+                        )
                     }
                 })()}
 
             {props.order.map((item) => {
-                console.log(item);
-                console.log("here");
+                return(
                 <Board2 item={item} />
-                console.log("here5");
-            })};
+                );
+            })}
                     
             </div>
             {/* <Footer/> */}
