@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const Board2 = (props) => {
     
