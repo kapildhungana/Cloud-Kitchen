@@ -71,7 +71,7 @@ const CartComponent = () => {
                         {cart.map((c)=>(
                             <Bill item={c} key={c.id}/>
                         ))}
-                        <div className=" row">
+                        <div className="row">
                                 <div className="Button" onClick={orderRequested}>Checkout</div>
                         </div>
 
