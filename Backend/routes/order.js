@@ -25,9 +25,10 @@ router.post('/save', (req, res) => {
 });
 
 router.patch('/update0',(req,res) => {
+    console.log(req.body);
     console.log(req.body._id);
     order.findById(req.body._id)
-    .then(item => item.update({ status : 1 }));
+    .then(item => item.update({ kitchenEmployee : req.body.kitchen ,status : 1 }));
 })
 
 router.patch('/update1',(req,res) => {
@@ -37,9 +38,9 @@ router.patch('/update1',(req,res) => {
 })
 
 router.patch('/update2',(req,res) => {
-    console.log(req.body._id);
+    console.log(req.body);
     order.findById(req.body._id)
-    .then(item => item.update({ status : 3 }));
+    .then(item => item.update({ deliveryPersonnel : req.body.delivery ,status : 3 }));
 })
 
 module.exports = router;
