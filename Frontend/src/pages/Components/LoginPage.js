@@ -36,6 +36,7 @@ const LoginPage = (props) => {
             localStorage.setItem("usertype", user);
             localStorage.setItem("username",udata.email);
             localStorage.setItem("cart", JSON.stringify([]));
+            localStorage.setItem("fav", JSON.stringify([]));
             if (user === "customer") {
               window.location.href = `/home/${user}`;
             } else if(user === "kitchenemployee"){

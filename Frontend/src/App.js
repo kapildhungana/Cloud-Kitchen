@@ -1,26 +1,20 @@
 import Cart from "./pages/Cart";
-// import Jpt from "./jpt";
 import Profile from "./pages/Profile";
 import LandingPage from "./pages/LandingPage";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Footer from "./pages/Components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import RegisterPage from "./pages/RegisterPage";
-// import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/Components/LoginPage";
 import HomePage from "./pages/Components/HomePage";
 import Delivery from "./pages/Delivery"
 import Orders from "./pages/Orders"
-
+import Favorites from "./pages/Favorites";
 import RegisterPage from "./pages/Components/RegisterPage";
 
 function App() {
   const url = "http://localhost:5000/";
   const get_food3_url = "http://localhost:5000/products3";
   const get_order_url = "http://localhost:5000/order/";
-  
-  // const get_food_url = "http://localhost:5000/products";
 
   const [details, setDetails] = useState("");
 
@@ -77,7 +71,6 @@ function App() {
     <>
     <Router>
       <Routes>
-        {/* <Route path="/jpt" element={<Jpt/>}></Route> */}
         <Route path="/check" element={
             <div>
               <br />
@@ -104,6 +97,7 @@ function App() {
         <Route path="/home/kitchenemployee/cooking" element={<Orders order = {cookorder} type={"cooking"}/>}/> 
         <Route path="/home/deliverypersonnel/pending" element={<Delivery order = {fdorder} type={"pending"}/>}/> 
         <Route path="/home/deliverypersonnel/delivering" element={<Delivery order = {delivorder} type={"delivering"}/>}/> 
+        <Route path="/favorites" element={<Favorites/>}/> 
         <Route path="/profile" element={<Profile/>}/>
 
 

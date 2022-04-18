@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
   const logout = () => {
-    console.log("clicked");
     localStorage.removeItem("token");
     localStorage.removeItem("usertype");
     localStorage.removeItem("cart");
-    // window.location.href = "/";
   };
 
   const user = props.user;
@@ -65,6 +63,26 @@ const Navbar = (props) => {
                 })()}
 
                 {(() => {
+                  if (page === "favorites") {
+                    return (
+                      <li>
+                        <Link to={"/favorites"}>
+                          <img src="/images/star_red.png" alt="star_red" />
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li>
+                        <Link to={"/favorites"}>
+                          <img src="/images/star.png" alt="star" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })()}
+
+                {(() => {
                   if (page === "cartpage") {
                     return (
                       <li>
@@ -82,7 +100,8 @@ const Navbar = (props) => {
                       </li>
                     );
                   }
-                })()} 
+                })()}
+
                 <li>
                   <img src="/images/logout.png" alt="logout" onClick={logout} />
                 </li>
