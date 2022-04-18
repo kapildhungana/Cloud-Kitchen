@@ -8,24 +8,20 @@ const CartComponent = () => {
     const orderRequested = () => {
         const order_url = "http://localhost:5000/order/save";
         console.log(order_url)
+        const ordDet = [];
+        const fd = JSON.parse(localStorage.getItem('cart'));
+        fd.map((f)=>{
+            ordDet.push({
+                name : f.name,
+                quantity : 1
+            })
+        })
+
         const orderDetail = {
-            customer : "roshan@bhatt.com",
+            customer : localStorage.getItem("username"),
             kitchenEmployee : "",
             deliveryPersonnel : "",
-            orderDetails : [
-                {
-                    name : "Panner Pakoda",
-                    quantity : 4,
-                },
-                {
-                    name : "Chowmein",
-                    quantity : 4,
-                },
-                {
-                    name : "Palak Paneer",
-                    quantity : 4,
-                }
-            ],
+            orderDetails : ordDet,
             status : 0, 
         }
 
@@ -102,7 +98,6 @@ export default CartComponent;
                             </div>
                         </div>
                     </div>
-
                     <div className="cartItem">
                         <div className="itemImage">
                             <img src="images/mushroompizza.png"></img>
@@ -121,7 +116,6 @@ export default CartComponent;
                             </div>
                         </div>
                     </div>
-
                     <div className="cartItem">
                         <div className="itemImage">
                             <img src="images/mushroompizza.png"></img>
