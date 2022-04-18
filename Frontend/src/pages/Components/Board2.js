@@ -7,6 +7,8 @@ const Board2 = (props) => {
 
     const orderDone = async (item) => {
 
+        item.delivery = localStorage.getItem("username");
+
         if(item.status === 2){
             const order_url = "http://localhost:5000/order/update2";
             await axios.patch(order_url, item);
@@ -14,8 +16,14 @@ const Board2 = (props) => {
 
     }
 
+    const getAddress = () => {
+        
+    }
+
     return (
         <div className="cart">
+            
+            {getAddress()}
             <div className="cartImagebox">
                 <img src="/images/mushroompizza.png" className="cartImage"></img>
             </div>

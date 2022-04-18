@@ -8,51 +8,25 @@ const CartComponent = () => {
     const orderRequested = () => {
         const order_url = "http://localhost:5000/order/save";
         console.log(order_url)
+        const ordDet = [];
+        const fd = JSON.parse(localStorage.getItem('cart'));
+        fd.map((f)=>{
+            ordDet.push({
+                name : f.name,
+                quantity : 1
+            })
+        })
+
         const orderDetail = {
-            customer : "roshan@bhatt.com",
+            customer : localStorage.getItem("username"),
             kitchenEmployee : "",
             deliveryPersonnel : "",
-            orderDetails : [
-                {
-                    name : "Panner Pakoda",
-                    quantity : 4,
-                },
-                {
-                    name : "Chowmein",
-                    quantity : 4,
-                },
-                {
-                    name : "Palak Paneer",
-                    quantity : 4,
-                }
-            ],
+            orderDetails : ordDet,
             status : 0, 
         }
 
         axios.post(order_url,orderDetail);
     }
-
-    // const cart = [{
-    //     id: 1,
-    //     tag : ["veg","all time snack"],
-    //     name : "Pasta Carbonara",
-    //     price : 25, 
-    //     imageurl : "random1",           
-    // },
-    // {
-    //     id:2,
-    //     tag : ["veg","kids special"],
-    //     name : "Mushroom Risotto",
-    //     price : 25, 
-    //     imageurl : "random2",
-    // },
-    // {
-    //     id:3,
-    //     tag : ["veg","most loved"],
-    //     name : "Margherita Pizza",
-    //     price : 25, 
-    //     imageurl : "random3",
-    // },];
     const cart = JSON.parse(localStorage.getItem('cart'));
     return ( 
         <div className = "cartContainer">
@@ -83,60 +57,3 @@ const CartComponent = () => {
 }
  
 export default CartComponent;
-
-{/* <div className="cartItem">
-                        <div className="itemImage">
-                            <img src="images/mushroompizza.png"></img>
-                        </div>
-                        <div className="itemInfo">
-                            <div className="itemName">Mushroom Pizza</div>
-                            <div className="itemNumbers">
-                                <div className="itemQuantity">
-                                    <div className="quantityButton"><button><p>-</p></button></div>
-                                    <div className="quantity"><p>2</p></div>
-                                    <div className="quantityButton"><button><p>+</p></button></div>
-                                </div>
-                                <div className="itemPrice">
-                                    <p>$6.00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="cartItem">
-                        <div className="itemImage">
-                            <img src="images/mushroompizza.png"></img>
-                        </div>
-                        <div className="itemInfo">
-                            <div className="itemName">Mushroom Pizza</div>
-                            <div className="itemNumbers">
-                                <div className="itemQuantity">
-                                    <div className="quantityButton"><button><p>-</p></button></div>
-                                    <div className="quantity"><p>2</p></div>
-                                    <div className="quantityButton"><button><p>+</p></button></div>
-                                </div>
-                                <div className="itemPrice">
-                                    <p>$6.00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="cartItem">
-                        <div className="itemImage">
-                            <img src="images/mushroompizza.png"></img>
-                        </div>
-                        <div className="itemInfo">
-                            <div className="itemName">Mushroom Pizza</div>
-                            <div className="itemNumbers">
-                                <div className="itemQuantity">
-                                    <div className="quantityButton"><button><p>-</p></button></div>
-                                    <div className="quantity"><p>2</p></div>
-                                    <div className="quantityButton"><button><p>+</p></button></div>
-                                </div>
-                                <div className="itemPrice">
-                                    <p>$6.00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
