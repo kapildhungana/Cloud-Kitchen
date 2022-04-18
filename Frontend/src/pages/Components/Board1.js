@@ -2,6 +2,7 @@ import axios from "axios";
 
 
 const Board1 = (props) => {
+    console.log(props);
     const item = props.item;
     console.log(item);
 
@@ -23,10 +24,18 @@ const Board1 = (props) => {
             <div className="cartImagebox">
                 <img src="/images/mushroompizza.png" className="cartImage"></img>
             </div>
-            <div className="cartInfo">
-                <div className="itemName">{item.orderDetails[0].name}</div>
-                <div className="itemName">Quantity Take</div>
-            </div>
+            
+                {item.orderDetails.map(item1 => {
+                    return(
+                        <div className="cartInfo">
+                            <div className="itemName">{item1.name}</div>
+                            <div className="itemName">{item1.quantity}</div>
+                        </div>
+                    )
+                }) }
+                {/* <div className="itemName">{item.orderDetails[0].name}</div>
+                <div className="itemName">Quantity Take</div> */}
+            
             <div className="take" onClick = {() => {
                 orderDone(item);
             }}>Take</div>
