@@ -71,11 +71,23 @@
 .cartInfo{
   /* border: 2px solid black; */
   /* padding: 10px; */
-  width: 75%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.cartInfoContainer{
+  width: 60%;
+  height: 60%;
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow: scroll;
 }
+
 .take{
   padding: 8px 20px;
   background-color: red;
@@ -88,7 +100,7 @@
   right: 15px;
   height: 30px;
   width: 60px;
-  
+  cursor: pointer;
 }
 
 .cartHeading{

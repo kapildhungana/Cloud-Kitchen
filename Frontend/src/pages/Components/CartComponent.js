@@ -28,11 +28,28 @@ const CartComponent = () => {
         axios.post(order_url,orderDetail);
     }
     const cart = JSON.parse(localStorage.getItem('cart'));
+
+    var isempty;
+
+    if (localStorage.getItem("cart") === null){
+        isempty = true;
+    } else{
+        isempty = false;
+    }
+
+    
     return ( 
         <div className = "cartContainer">
             <hr className="dividerLine"></hr>
             <div className="cartHeading">Cart</div>
-            <div className="cartBody">
+            {(() => {
+        if(isempty){
+            return(
+                <div className="cartBody">Your cart is empty!</div>
+            );
+        } else {
+            return(
+                <div className="cartBody">
                 <div className="cartItems">
                     {cart.map((c)=>(
                         <CartItem item={c} key={c.id}/>
@@ -52,6 +69,9 @@ const CartComponent = () => {
                     </div>  
                 </div>
             </div>
+            )
+        }
+    })()}
         </div>
      );
 }

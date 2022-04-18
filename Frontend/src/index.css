@@ -177,7 +177,7 @@ input:focus{
 
 .Button{
   width: 75%;
-   display: flex;
+  display: flex;
   width: 75%;
   flex-direction: row;
   justify-content: space-around; 
@@ -188,7 +188,7 @@ input:focus{
   background-color: white;
   /* align-items: center; */
   padding: 10px;
-
+  cursor: pointer;
 }
 
 /* .cart, */

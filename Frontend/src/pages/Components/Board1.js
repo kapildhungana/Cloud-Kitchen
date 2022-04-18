@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const Board1 = (props) => {
-  console.log(props);
   const item = props.item;
-  console.log(item);
+  const type = props.type;
+  // const imageurl = `/images/products/${props.item.orderDetails[0].imageurl}`;
+  const imageurl = `/images/products/mushroompizza.png`;
 
   const orderDone = async (item) => {
     const user = localStorage.getItem("username");
@@ -17,20 +18,32 @@ const Board1 = (props) => {
       await axios.patch(order_url, item);
     }
   };
+
+
+  var button_value = "";
+
+  if (type === "pending"){
+    button_value = "Take";
+  } else if (type === "cooking"){
+    button_value = "Cooked";
+  }
+
   return (
     <div className="cart">
       <div className="cartImagebox">
-        <img src="/images/mushroompizza.png" className="cartImage"></img>
+        {/* <img src="/images/mushroompizza.png" className="cartImage"></img> */}
+        <img src={imageurl} className="cartImage"></img>
       </div>
-
+      <div className="cartInfoContainer">
       {item.orderDetails.map((item1) => {
         return (
           <div className="cartInfo">
             <div className="itemName">{item1.name}</div>
             <div className="itemName">{item1.quantity}</div>
-          </div>
+          </div> 
         );
       })}
+      </div>
 
       <div
         className="take"
@@ -38,7 +51,7 @@ const Board1 = (props) => {
           orderDone(item);
         }}
       >
-        Take
+        {button_value}
       </div>
     </div>
   );

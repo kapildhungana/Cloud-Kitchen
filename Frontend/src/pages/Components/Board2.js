@@ -3,7 +3,16 @@ import axios from "axios";
 const Board2 = (props) => {
     
     const item = props.item;
-    console.log(item);
+    const type = props.type;
+
+    var button_value = "";
+
+    if (type === "pending"){
+        button_value = "Take";
+    } else if (type === "delivering"){
+        button_value = "Delivered";
+    }
+
 
     const orderDone = async (item) => {
 
@@ -34,7 +43,7 @@ const Board2 = (props) => {
             </div>
             <div className="take" onClick = {() => {
                 orderDone(item);
-            }}>Take</div>
+            }}>{button_value}</div>
         </div>
     )
 }
