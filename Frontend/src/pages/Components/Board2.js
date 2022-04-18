@@ -16,7 +16,20 @@ const Board2 = (props) => {
 
     }
 
-    const getAddress = () => {
+    const getIt = async () => {
+        
+        const order_url = "http://localhost:5000/order/address";
+        const res = await axios.patch(order_url, item);
+        console.log(res.data.cust[0].address[0].country);
+        item.addr1 = res.data.cust[0].address[0].country;
+        console.log(item);
+        
+    }
+
+    const getAddress =  () => {
+
+        getIt();
+        console.log(item);
         
     }
 
@@ -29,7 +42,7 @@ const Board2 = (props) => {
             </div>
             <div className="cartInfo">
                 <div className="itemName">Mushroom Pizza</div>
-                <div className="itemName">From: Chitoor - 12, 632014</div>
+                <div className="itemName">From: {item.addr1}</div>
                 <div className="itemName">To: A- Block Mens hostel</div>
             </div>
             <div className="take" onClick = {() => {
