@@ -43,7 +43,7 @@ const Delivery=(props)=>{
 
             {props.order.map((item) => {
                 return(
-                <Board2 item={item} />
+                <Board2 item={item} type={type}/>
                 );
             })}
                     

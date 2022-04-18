@@ -44,7 +44,7 @@ const Orders = (props) => {
 
 
                 {props.order.map((item) => (
-                    <Board1 item={item} />
+                    <Board1 item={item} type={type}/>
                 ))};
 
             </div>
