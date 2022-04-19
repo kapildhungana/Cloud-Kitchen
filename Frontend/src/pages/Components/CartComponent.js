@@ -5,6 +5,7 @@ import axios from "axios";
 
 const CartComponent = () => {
 
+
     const orderRequested = () => {
         const order_url = "http://localhost:5000/order/save";
         console.log(order_url)
@@ -25,13 +26,17 @@ const CartComponent = () => {
             status : 0, 
         }
 
+        localStorage.setItem("cart", JSON.stringify([]));
+
+        localStorage.setItem("status",true);
+
         axios.post(order_url,orderDetail);
     }
     const cart = JSON.parse(localStorage.getItem('cart'));
 
     var isempty;
 
-    if (localStorage.getItem("cart") === null){
+    if (cart.length === 0){
         isempty = true;
     } else{
         isempty = false;
@@ -43,35 +48,38 @@ const CartComponent = () => {
             <hr className="dividerLine"></hr>
             <div className="cartHeading">Cart</div>
             {(() => {
-        if(isempty){
-            return(
-                <div className="cartBody">Your cart is empty!</div>
-            );
-        } else {
-            return(
-                <div className="cartBody">
-                <div className="cartItems">
-                    {cart.map((c)=>(
-                        <CartItem item={c} key={c.id}/>
-                    ))}
+                console.log(isempty);
+                console.log(localStorage.getItem("status"))
+                if(isempty){
+                    return(
+                        <div className="cartBody">Your cart is empty!</div>
+                    )
+                } 
+                else {
+                    return(
+                        <div className="cartBody">
+                        <div className="cartItems">
+                            {cart.map((c)=>(
+                                <CartItem item={c} key={c.id}/>
+                            ))}
 
-                </div>
-
-                <div className="cartBill">
-                    <div className="Billinner">
-                        {cart.map((c)=>(
-                            <Bill item={c} key={c.id}/>
-                        ))}
-                        <div className="row">
-                                <div className="Button" onClick={orderRequested}>Checkout</div>
                         </div>
 
-                    </div>  
-                </div>
-            </div>
-            )
-        }
-    })()}
+                        <div className="cartBill">
+                            <div className="Billinner">
+                                {cart.map((c)=>(
+                                    <Bill item={c} key={c.id}/>
+                                ))}
+                                <div className="row">
+                                        <div className="Button" onClick={orderRequested}>Checkout</div>
+                                </div>
+
+                            </div>  
+                        </div>
+                    </div>
+                    )
+                }
+            })()}
         </div>
      );
 }
