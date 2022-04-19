@@ -44,6 +44,12 @@ router.patch('/update2',(req,res) => {
     .then(item => item.update({ deliveryPersonnel : req.body.delivery ,status : 3 }));
 })
 
+router.patch('/update3',(req,res) => {
+    console.log(req.body);
+    order.findById(req.body._id)
+    .then(item => item.update({status : 4 }));
+})
+
 router.patch('/address',async (req,res)=>{
     console.log(req.body);
     console.log("here");
