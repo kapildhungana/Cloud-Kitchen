@@ -1,5 +1,4 @@
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import Board2 from "./Components/Board2";
 import { Link } from "react-router-dom";
 
@@ -48,7 +47,7 @@ const Delivery=(props)=>{
                                 </div>
                                 {
                                 props.order.map((item1)=>{
-                                    if(item1.status == 3 && item1.deliveryPersonnel == localStorage.getItem("username")){
+                                    if(item1.status === 3 && item1.deliveryPersonnel === localStorage.getItem("username")){
                                         return(
                                             <Board2 item={item1} type={type}/>
                                         )
@@ -64,7 +63,6 @@ const Delivery=(props)=>{
             
                     
             </div>
-            {/* <Footer/> */}
             
         </div>
     )

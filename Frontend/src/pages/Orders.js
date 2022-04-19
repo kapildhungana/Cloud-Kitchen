@@ -47,7 +47,7 @@ const Orders = (props) => {
 
                             {
                                 props.order.map((item1)=>{
-                                    if(item1.status == 1 && item1.kitchenEmployee == localStorage.getItem("username")){
+                                    if(item1.status === 1 && item1.kitchenEmployee === localStorage.getItem("username")){
                                         return(
                                             <Board1 item={item1} type={type}/>
                                         )

@@ -47,7 +47,7 @@ const Board2 = (props) => {
             <div className="cartImagebox">
                 <img src="/images/mushroompizza.png" className="cartImage"></img>
             </div>
-            <div className="cartInfo">
+            <div className="cartInfo cartInfoDelivery">
                 <div className="itemName">{item.orderDetails[0].name}</div>
                 <div className="itemName">From: {item.kitchenEmployee} Bangalore, Karnataka</div>
                 <div className="itemName">To: {item.customer} Vellore, TamilNadu</div>

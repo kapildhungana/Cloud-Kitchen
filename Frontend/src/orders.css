@@ -77,6 +77,11 @@
   /* justify-content: space-between; */
 }
 
+.cartInfoDelivery{
+  flex-direction: column;
+  gap: 10px;
+}
+
 .cartInfoContainer{
   width: 60%;
   height: 60%;

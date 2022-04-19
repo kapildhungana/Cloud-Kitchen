@@ -1,6 +1,5 @@
 import CartItem from "./CartItem";
 import Bill from "./Bill";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 const CartComponent = () => {
