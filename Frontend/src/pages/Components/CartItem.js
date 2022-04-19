@@ -16,8 +16,8 @@ const CartItem = (props) => {
   window.location.href ="/cart";
   }
   
-  const imageurl = `/images/products/${item.imageurl}`;
-  
+  const imageurl = `/images/products/${item[0].imageurl}`;
+
   return (
     <div className="cartItem">
         <div className="trash" onClick={deleteItem}><img src="images/trash.png" alt="trash" /></div>
@@ -39,6 +39,7 @@ const CartItem = (props) => {
                  filtered.push([item[0],qty-1]);
                  localStorage.setItem('cart', JSON.stringify(filtered));
                  setQty(qty-1);
+                //  window.location.href = "/cart";
                 }
                 
                
@@ -65,6 +66,7 @@ const CartItem = (props) => {
                filtered.push([item[0],qty+1]);
                localStorage.setItem('cart', JSON.stringify(filtered));
                setQty(qty+1);
+              //  window.location.href = "/cart";
                 // for(let i=0;i<cart.length;i++){
                 //   if(cart[i][0].name===item[0].name)
 

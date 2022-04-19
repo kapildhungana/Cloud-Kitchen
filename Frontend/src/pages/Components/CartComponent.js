@@ -61,14 +61,14 @@ const CartComponent = () => {
                 else {
                     return (
                         <div className="cartBody">
+
                             <div className="cartItems">
+                                <div className="row"> 
+                                    <div className="Button2" onClick={applyChange}>Apply</div>
+                                </div>
                                 {cart.map((c) => (
                                     <CartItem item={c} key={c[0].id} />
                                 ))}
-
-                                <div className=" row">
-                                    <div className="Button2" onClick={applyChange}>Apply</div>
-                                </div>
 
                             </div>
 
