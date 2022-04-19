@@ -42,7 +42,7 @@ const Navbar = (props) => {
                   }
                 })()}
 
-                {(() => {
+                {/* {(() => {
                   if (page === "profilepage") {
                     return (
                       <li>
@@ -60,7 +60,7 @@ const Navbar = (props) => {
                       </li>
                     );
                   }
-                })()}
+                })()} */}
 
                 {(() => {
                   if (page === "favorites") {

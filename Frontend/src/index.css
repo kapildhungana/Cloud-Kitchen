@@ -696,3 +696,10 @@ input:focus{
 .loginlinks a:hover{
   text-decoration: underline;
 }
+
+
+.favoriteBody{
+  gap: 30px;
+  max-height: 500px;
+  overflow: scroll;
+}

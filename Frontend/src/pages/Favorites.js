@@ -18,29 +18,32 @@ const Favorites = () => {
   }
 
   return (
-    <div className="cartContainer">
+    <div>
       <Navbar user={"customer"} page={"favorites"} />
-      <hr className="dividerLine"></hr>
-      <div className="cartHeading">Favorites</div>
-      <div className="cartBody">
-      <div className="cartbox">You have no favorite food items yet!</div>
-      {(() => {
-        if (isempty) {
-        //   return (
-            <div className="cartbox">You have no favorite food items yet!</div>
-        //   );
-        } else {
-          return (
-            <div className="cartbox">
-              {(() => {
-                fav.map((item) => {
-                  return(<Board3 item={item} />);
-                });
-              })()}
-            </div>
-          );
-        }
-      })()}
+      <div className="cart1">
+        <div className="cartContainer">
+          <hr className="dividerLine"></hr>
+          <div className="cartHeading">Favorites</div>
+          {(() => {
+            if (isempty) {
+              return (
+                <div className="cartBody favoriteBody">
+                    You have no favorite food items yet!
+                </div>
+              );
+            } else {
+              return (
+                <div className="cartBody favoriteBody">
+                  {/* <div className="cartbox"> */}
+                    {fav.map((item) => {
+                      return <Board3 item={item} />;
+                    })}
+                  {/* </div> */}
+                </div>
+              );
+            }
+          })()}
+        </div>
       </div>
     </div>
   );
