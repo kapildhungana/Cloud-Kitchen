@@ -17,6 +17,7 @@ const LoginPage = (props) => {
   else {
 
     const handleSubmit = (event) => {
+      event.preventDefault();
       const url = "http://localhost:5000/users/login";
       const udata = {
         email: event.target.email.value,
@@ -59,7 +60,7 @@ const LoginPage = (props) => {
             <p>GhostEats</p>
             <div className="loginform">
               <h1>Login</h1>
-              <form action="#" onSubmit={handleSubmit}>
+              <form  onSubmit={handleSubmit}>
                 <input type="email" placeholder="Email" name="email" />
                 <input type="password" placeholder="Password" name="password" />
                 <input type="submit" value="Login" />

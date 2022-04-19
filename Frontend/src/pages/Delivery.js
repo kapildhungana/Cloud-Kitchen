@@ -25,27 +25,43 @@ const Delivery=(props)=>{
                 {(() => {
                     if (type === "pending") {
                         return (
-                            <div className="classtop">
-                                <Link to="/home/deliverypersonnel/pending"><span className="toggle active">Pending</span></Link>
-                                <Link to="/home/deliverypersonnel/delivering"><span className="toggle">Delivering</span></Link>
-                            </div>
+                            <>
+                                <div className="classtop">
+                                    <Link to="/home/deliverypersonnel/pending"><span className="toggle active">Pending</span></Link>
+                                    <Link to="/home/deliverypersonnel/delivering"><span className="toggle">Delivering</span></Link>
+                                </div>
+                                {props.order.map((item) => {
+                                    return(
+                                    <Board2 item={item} type={type}/>
+                                    );
+                                })}
+                            </>
+                            
                         )
                     }
                     else if (type === "delivering") {
                         return (
-                            <div className="classtop">
-                                <Link to="/home/deliverypersonnel/pending"><span className="toggle">Pending</span></Link>
-                                <Link to="/home/deliverypersonnel/delivering"><span className="toggle active">Delivering</span></Link>
-                            </div>
+                            <>
+                                <div className="classtop">
+                                    <Link to="/home/deliverypersonnel/pending"><span className="toggle">Pending</span></Link>
+                                    <Link to="/home/deliverypersonnel/delivering"><span className="toggle active">Delivering</span></Link>
+                                </div>
+                                {
+                                props.order.map((item1)=>{
+                                    if(item1.status == 3 && item1.deliveryPersonnel == localStorage.getItem("username")){
+                                        return(
+                                            <Board2 item={item1} type={type}/>
+                                        )
+                                        
+                                    }
+                                })
+                            }
+                            </>
                         )
                     }
                 })()}
 
-            {props.order.map((item) => {
-                return(
-                <Board2 item={item} type={type}/>
-                );
-            })}
+            
                     
             </div>
             {/* <Footer/> */}
