@@ -3,6 +3,7 @@ import Bill from "./Bill";
 import axios from "axios";
 
 const CartComponent = () => {
+  const cart = JSON.parse(localStorage.getItem("cart"));
   const orderRequested = () => {
     const order_url = "http://localhost:5000/order/save";
     console.log(order_url);
@@ -29,7 +30,11 @@ const CartComponent = () => {
 
     axios.post(order_url, orderDetail);
   };
-  const cart = JSON.parse(localStorage.getItem("cart"));
+
+  const applyChange = () => {
+    //localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = "/cart";
+  };
 
   var isempty;
 

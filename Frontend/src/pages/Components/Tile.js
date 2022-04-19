@@ -32,6 +32,16 @@ const Tile = (props) => {
 
   const [ordered, setOrdered] = useState(status);
   const [favorited, setFavorited] = useState(statusfav);
+        if (!ordered) {
+            cart.push([food,1]);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            NotificationManager.success(`${food.name} is added to the cart!`);
+            setOrdered(true);
+            status= true;
+        }
+        else {
+            NotificationManager.info(`${food.name} is already there in the cart!`);
+        }
 
   const addToCart = () => {
     if (!ordered) {
