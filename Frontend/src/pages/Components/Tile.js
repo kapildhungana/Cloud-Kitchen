@@ -9,9 +9,9 @@ const Tile = (props) => {
     var status=false;
 
     if (cart.find((item)=>{
-    return item.name==food.name;
+    return item[0].name==food.name;
     })) {
-        status =true;
+        status = true;
         console.log("item is there");
     }
     
@@ -20,7 +20,7 @@ const Tile = (props) => {
     const addToCart = () => {
 
         if (!ordered) {
-            cart.push(food);
+            cart.push([food,1]);
             localStorage.setItem('cart', JSON.stringify(cart));
             NotificationManager.success(`${food.name} is added to the cart!`);
             setOrdered(true);

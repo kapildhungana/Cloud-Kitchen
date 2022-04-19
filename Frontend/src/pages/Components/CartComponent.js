@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const CartComponent = () => {
-
+    const cart = JSON.parse(localStorage.getItem('cart'));
     const orderRequested = () => {
         const order_url = "http://localhost:5000/order/save";
         console.log(order_url)
@@ -27,7 +27,11 @@ const CartComponent = () => {
 
         axios.post(order_url,orderDetail);
     }
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    const applyChange = ()=>{
+        //localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href ="/cart";
+    }
+    
     return ( 
         <div className = "cartContainer">
             <hr className="dividerLine"></hr>
@@ -35,20 +39,23 @@ const CartComponent = () => {
             <div className="cartBody">
                 <div className="cartItems">
                     {cart.map((c)=>(
-                        <CartItem item={c} key={c.id}/>
+                        <CartItem item={c} key={c[0].id}/>
                     ))}
+
+                    <div className=" row">
+                                <div className="Button2" onClick={applyChange}>Apply</div>
+                    </div>
 
                 </div>
 
                 <div className="cartBill">
                     <div className="Billinner">
                         {cart.map((c)=>(
-                            <Bill item={c} key={c.id}/>
+                            <Bill item={c} key={c[0].id}/>
                         ))}
                         <div className=" row">
                                 <div className="Button" onClick={orderRequested}>Checkout</div>
                         </div>
-
                     </div>  
                 </div>
             </div>
