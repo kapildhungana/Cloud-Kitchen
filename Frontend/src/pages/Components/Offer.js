@@ -7,13 +7,13 @@ const Offer=()=>{
             <div className="left">
                 <div className="left-in">
                     <div className="bold">Todays Special</div>
-                    <div className="bold">Jhol Mo: Mo:</div>
+                    <div className="bold">Mo: Mo:</div>
                     <div >The goodness of Mo: Mo: with hot soup for this cold day. Its nature’s demand.</div>
                     <div className="Button3">OrderNow</div>
                 </div>
             </div>
             <div className="right">
-                <img src="/images/food.jpg" alt="offer"></img>
+                <img src="/images/momo.jpg" alt="offer"></img>
             </div>
         </div>
 

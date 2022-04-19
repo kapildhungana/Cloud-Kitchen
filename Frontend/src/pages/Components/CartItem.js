@@ -16,11 +16,13 @@ const CartItem = (props) => {
   window.location.href ="/cart";
   }
   
+  const imageurl = `/images/products/${item.imageurl}`;
+  
   return (
     <div className="cartItem">
         <div className="trash" onClick={deleteItem}><img src="images/trash.png" alt="trash" /></div>
       <div className="itemImage">
-        <img src="images/mushroompizza.png"></img>
+        <img src={imageurl}></img>
       </div>
       <div className="itemInfo">
         {/* <div className="itemNumbers"> */}

@@ -33,10 +33,12 @@ const Tile = (props) => {
         // console.log(cart);
     }
 
+    const imageurl = `/images/products/${food.imageurl}`;
+
     return (
         <div className="product">
             <div className="product_image">
-                <img src="/images/food.jpg" alt="food"></img>
+                <img src={imageurl} alt={food.imageurl}></img>
             </div>
             <div className="title">
                 {/* Golden Pizza!! */}

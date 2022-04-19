@@ -3,11 +3,6 @@
 
 @import "react-notifications/lib/notifications.css";
 
-*{
-  margin: 0;
-  padding: 0;
-}
-
 :root{
   --darkRed: #E63020;
   --lightRed: #DD3A2B;
@@ -43,6 +38,10 @@
   margin: 0;
   padding: 0;
   font-family: var(--lora);
+}
+
+body{
+  overflow-x: hidden;
 }
 
 input:focus{
@@ -178,7 +177,7 @@ input:focus{
 
 .Button{
   width: 75%;
-   display: flex;
+  display: flex;
   width: 75%;
   flex-direction: row;
   justify-content: space-around; 
@@ -189,7 +188,7 @@ input:focus{
   background-color: white;
   /* align-items: center; */
   padding: 10px;
-
+  cursor: pointer;
 }
 
 /* .cart, */

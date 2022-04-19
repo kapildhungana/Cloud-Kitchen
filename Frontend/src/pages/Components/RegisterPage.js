@@ -3,6 +3,8 @@ import axios from "axios";
 
 const RegisterPage = () => {
   const handleSubmit = (event) =>{
+
+    event.preventDefault();
     // alert(event.target.fullname.value);
   const url = "http://localhost:5000/users/register";
   const data = {
