@@ -23,29 +23,27 @@ const Tile = (props) => {
 
   if (
     cart.find((item) => {
-      return item.name === food.name;
+      return item[0].name === food.name;
     })
   ) {
     status = true;
-    console.log("item is there");
   }
 
   const [ordered, setOrdered] = useState(status);
   const [favorited, setFavorited] = useState(statusfav);
-        if (!ordered) {
-            cart.push([food,1]);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            NotificationManager.success(`${food.name} is added to the cart!`);
-            setOrdered(true);
-            status= true;
-        }
-        else {
-            NotificationManager.info(`${food.name} is already there in the cart!`);
-        }
 
   const addToCart = () => {
+    // if (!ordered) {
+    //   cart.push(food);
+    //   localStorage.setItem("cart", JSON.stringify(cart));
+    //   NotificationManager.success(`${food.name} is added to the cart!`);
+    //   setOrdered(true);
+    //   status = true;
+    // } else {
+    //   NotificationManager.info(`${food.name} is already there in the cart!`);
+    // }
     if (!ordered) {
-      cart.push(food);
+      cart.push([food, 1]);
       localStorage.setItem("cart", JSON.stringify(cart));
       NotificationManager.success(`${food.name} is added to the cart!`);
       setOrdered(true);
@@ -65,7 +63,6 @@ const Tile = (props) => {
   };
 
   const removeFromFav = () => {
-
     var filtered = fav.filter(function (foo) {
       return foo.name !== food.name;
     });

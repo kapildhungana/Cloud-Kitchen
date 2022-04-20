@@ -11,8 +11,8 @@ const CartComponent = () => {
     const fd = JSON.parse(localStorage.getItem("cart"));
     fd.map((f) => {
       ordDet.push({
-        name: f.name,
-        quantity: 1,
+        name: f[0].name,
+        quantity: f[1],
       });
     });
 

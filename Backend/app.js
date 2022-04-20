@@ -1,11 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const product = require('./models/product');
 const app = express();
 const port = 5000;
 const cors = require('cors');
-const productModels = require('./models/product');
 const product3Models = require('./models/product3');
 const orderModel = require('./models/order');
 
@@ -15,7 +13,6 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 const userRouter = require("./routes/user");
-const productRouter = require("./routes/product");
 const product3Router = require("./routes/product3");
 const orderRouter = require("./routes/order");
 
@@ -31,7 +28,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     });
 
 app.use("/users", userRouter);
-app.use("/products", productRouter);
 app.use("/products3", product3Router);
 app.use("/order",orderRouter);
 
