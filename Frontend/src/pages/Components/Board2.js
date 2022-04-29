@@ -45,7 +45,7 @@ const Board2 = (props) => {
     return (
         <div className="cart">
             <div className="cartImagebox">
-                <img src="/images/mushroompizza.png" className="cartImage"></img>
+                <img src="/images/springrolls.jpg" className="cartImage"></img>
             </div>
             <div className="cartInfo cartInfoDelivery">
                 <div className="itemName">{item.orderDetails[0].name}</div>

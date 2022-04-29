@@ -4,7 +4,7 @@ const Board1 = (props) => {
   const item = props.item;
   const type = props.type;
   // const imageurl = `/images/products/${props.item.orderDetails[0].imageurl}`;
-  const imageurl = `/images/products/mushroompizza.png`;
+  const imageurl = `/images/products/springrolls.jpg`;
 
   const orderDone = async (item) => {
     const user = localStorage.getItem("username");
