@@ -7,17 +7,6 @@ const user = require('../models/user');
 
 // })
 
-app.get("/order",(req,res) => {
-    orderModel.find({})
-    .then((data) => {
-        // console.log('Data: ', data);
-        res.send(data)
-    })
-    .catch((error) => {
-        console.log('error ');
-    })
-})
-
 router.post('/save', (req, res) => {
     const order1 = new order({
         customer : req.body.customer,

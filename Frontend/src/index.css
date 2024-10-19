@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-@import "react-notifications/lib/notifications.css";
-
 :root{
   --darkRed: #E63020;
   --lightRed: #DD3A2B;
@@ -356,7 +354,7 @@ input:focus{
 /* Landing Page Banner */
 
 .banner{
-  background-image: url(../public/images/banner.jpeg);
+  background-image: url(/images/banner.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

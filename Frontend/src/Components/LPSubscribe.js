@@ -1,3 +1,5 @@
+import React from "react";
+
 const LPSubscribe = () => {
   return (
     <div className="subscribe_section">

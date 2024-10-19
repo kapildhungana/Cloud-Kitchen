@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
 
     type: {
         type: String,
-        enum: ['customer', "delivery_person", "kitchen_employee"],
+        enum: ['customer', "delivery_person", "kitchen_employee", "admin"],
         required: true
     },
 
@@ -48,5 +48,10 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+userSchema.methods.matchPassword = async function(enteredPassword) {
+    return enteredPassword === this.password
+    // return await bcrypt.compare(enteredPassword, this.password)
+}
 
 module.exports = mongoose.model('User', userSchema);

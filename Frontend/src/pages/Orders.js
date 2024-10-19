@@ -1,6 +1,8 @@
-import Navbar from "./Components/Navbar";
-import Board1 from "./Components/Board1";
+import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
+import Board1 from "../Components/Board1";
+import React from 'react';
+
 
 const Orders = (props) => {
 
@@ -13,16 +15,10 @@ const Orders = (props) => {
 
     return (
         <div >
-            {/* <div className="inside">
-                center this
-            </div> */}
             <Navbar user={"kitchenemployee"} />
             <hr className="dividerLine"></hr>
             <div className="cartHeading">Orders</div>
-
-
             <div className="cartbox">
-
                 {(() => {
                     if (type === "pending") {
                         return (
@@ -59,13 +55,7 @@ const Orders = (props) => {
                         );
                     }
                 })()}
-
-
-                
-
             </div>
-            {/* <Footer/> */}
-
         </div>
     )
 };

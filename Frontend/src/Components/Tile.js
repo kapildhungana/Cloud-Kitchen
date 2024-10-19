@@ -1,5 +1,6 @@
 import { NotificationContainer, NotificationManager } from "react-notifications";
-import { useState } from "react";
+import React, { useState } from "react";
+
 
 const Tile = (props) => {
 
@@ -9,7 +10,7 @@ const Tile = (props) => {
     var status=false;
 
     if (cart.find((item)=>{
-    return item[0].name==food.name;
+    return item[0].name===food.name;
     })) {
         status = true;
         console.log("item is there");

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React from "react";
+
 const Navbar = (props) => {
   const logout = () => {
     console.log("clicked");

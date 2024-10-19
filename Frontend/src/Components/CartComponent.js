@@ -2,11 +2,13 @@ import CartItem from "./CartItem";
 import Bill from "./Bill";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import React from "react";
+
 
 const CartComponent = () => {
     const cart = JSON.parse(localStorage.getItem('cart'));
     const orderRequested = () => {
-        const order_url = "http://localhost:5000/order/save";
+        const order_url = "http://localhost:7777/order/save";
         console.log(order_url)
         const ordDet = [];
         const fd = JSON.parse(localStorage.getItem('cart'));

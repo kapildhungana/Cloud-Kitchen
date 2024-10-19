@@ -49,15 +49,14 @@
 .Button2{
     display: flex;
     width: 35%;
-    /* border: 2px solid black; */
-    flex-direction: row;
+    border-radius: 25px;
+        flex-direction: row;
     justify-content: space-around; 
+    overflow: hidden;
     box-sizing: border-box;
     color: var(--white);
     font-size: 1.5em;
     font-weight: bold;
-    /* background-color: white; */
-    /* align-items: center; */
     padding: 10px;
     background-color: var(--darkRed);
   }

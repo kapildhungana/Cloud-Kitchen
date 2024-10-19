@@ -1,3 +1,5 @@
+import React from "react";
+
 const LPStatistics = () => {
     return (
         <div className="statistics_section">

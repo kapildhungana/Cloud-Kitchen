@@ -1,4 +1,6 @@
 import axios from "axios";
+import React from "react";
+
 
 const Board1 = (props) => {
   const item = props.item;
@@ -11,10 +13,10 @@ const Board1 = (props) => {
     item.kitchen = user;
 
     if (item.status === 0) {
-      const order_url = "http://localhost:5000/order/update0";
+      const order_url = "http://localhost:7777/order/update0";
       await axios.patch(order_url, item, user);
     } else if (item.status === 1) {
-      const order_url = "http://localhost:5000/order/update1";
+      const order_url = "http://localhost:7777/order/update1";
       await axios.patch(order_url, item);
     }
   };

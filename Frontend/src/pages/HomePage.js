@@ -1,11 +1,13 @@
 // import { useState } from "react";
-import Navbar from "./Navbar";
-import Board from "./Board";
-import Offer from "./Offer";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import Board from "../Components/Board";
+import Offer from "../Components/Offer";
+import Footer from "../Components/Footer";
 import {NotificationContainer, NotificationManager} from "react-notifications";
+import React from "react";
 
-const HomePage =(props)=>{
+
+const HomePage = (props)=>{
     if(!localStorage.token || localStorage.usertype!=="customer"){
     window.location.href = `/register`;
     return;

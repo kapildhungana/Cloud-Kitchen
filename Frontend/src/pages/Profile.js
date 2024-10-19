@@ -1,6 +1,8 @@
-import Navbar from "./Components/Navbar";
-import ProfileComponent from "./Components/ProfileComponent";
-import AddressForm from "./Components/ProfileComponent";
+import Navbar from "../Components/Navbar";
+import ProfileComponent from "../Components/ProfileComponent";
+import AddressForm from "../Components/ProfileComponent";
+import React from 'react';
+
 
 const Profile=()=>{
     return (

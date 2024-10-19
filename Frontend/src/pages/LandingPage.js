@@ -1,10 +1,12 @@
 
 // import LoginPage from "./Components/LoginPage";
-import LPBanner from "./Components/LPBanner";
-import LPOurServices from "./Components/LPOurServices";
-import LPStatistics from "./Components/LPStatistics";
-import LPSubscribe from "./Components/LPSubscribe";
-import Footer from "./Components/Footer";
+import LPBanner from "../Components/LPBanner";
+import LPOurServices from "../Components/LPOurServices";
+import LPStatistics from "../Components/LPStatistics";
+import LPSubscribe from "../Components/LPSubscribe";
+import Footer from "../Components/Footer";
+import React from 'react';
+
 
 // const LandingPage = () => {
 //     return ( 

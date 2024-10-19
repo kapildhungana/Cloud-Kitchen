@@ -13,7 +13,7 @@ const Board = (props) => {
         setFilteredFoods(
             foods.slice(0,3)
         )
-      },[]);
+      }, [foods]);
 
     const expand=()=>{
         setOpen(!open)

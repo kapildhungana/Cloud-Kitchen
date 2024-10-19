@@ -1,7 +1,9 @@
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import Board2 from "./Components/Board2";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import Board2 from "../Components/Board2";
 import { Link } from "react-router-dom";
+import React from 'react';
+
 
 const Delivery=(props)=>{
     console.log(props)

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
+import React from "react";
+
 
 const RegisterPage = () => {
   const handleSubmit = (event) =>{
 
     event.preventDefault();
     // alert(event.target.fullname.value);
-  const url = "http://localhost:5000/users/register";
+  const url = "http://localhost:7777/users/register";
   const data = {
     fullname: event.target.fullname.value, 
     phonenumber: event.target.phonenumber.value,
