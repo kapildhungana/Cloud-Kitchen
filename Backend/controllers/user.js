@@ -4,8 +4,7 @@ import generateToken from '../utils/generateToken.js'
 
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { fullName, type, email, phoneNumber, password} = req.body
-
+    const email = req.body.email
     const userExists = await User.findOne({ email })
 
     if (userExists) {
@@ -13,13 +12,12 @@ const registerUser = asyncHandler(async (req, res) => {
         console.log('user exists')
         throw new Error('User already exists')
     }
-
     const user = User.create({
-        fullName: fullName,
-        type: type,
+        fullName: req.body.fullname,
+        type: req.body.type,
         email: email,
-        phone: phoneNumber,
-        password: password
+        phone: req.body.phonenumber,
+        password: req.body.password
     });
 
     if (user) {

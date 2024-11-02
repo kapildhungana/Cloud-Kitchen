@@ -17,7 +17,6 @@ const app = express()
     app.use(morgan('dev'))
 // }
 
-
 const corsOptions ={
     origin:'*', 
     credentials:true,
@@ -33,9 +32,8 @@ const corsOptions ={
 app.use(cors(corsOptions));
 app.use(express.json())
 
-const MONGO_URI = 'mongodb+srv://cloud:cloud@cloudkitchen.afn38.mongodb.net/?retryWrites=true&w=majority&appName=cloudkitchen';
-
-await connectDB(MONGO_URI)
+ 
+await connectDB()
 
 app.use('/users', userRoutes)
 // app.use('/api/products', productRoutes)
